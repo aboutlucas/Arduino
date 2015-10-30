@@ -1,4 +1,6 @@
 
+int sensor=1;
+int sensor=2;
 int vermelho=13;
 int amarelo=12;
 int verde=11;
@@ -21,6 +23,8 @@ pinMode(vermelhopedestre,OUTPUT);
 pinMode(verdepedestre,OUTPUT);
 pinMode(botao,INPUT); 
 pinMode(botao2,INPUT);  
+pinMode(sensor1,INPUT)
+pinMode(sensor2,INPUT)
 }
 
 void semafaroA(){ //o semafaro A fica vermelho nesse ciclo
@@ -35,6 +39,7 @@ digitalWrite(amarelo2,HIGH);
 int soma;
 for(soma=0;soma<=100;soma++){
 delay(100); 
+
 if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
 }
 
