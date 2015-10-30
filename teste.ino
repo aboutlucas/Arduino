@@ -89,29 +89,6 @@ delay(500);
 
 }
 
-void piscarapido(){ //sinal do pedestre pisca rapido 3 vezes item obrigatório do teste 
-//isto consome 3 segundos para ser executado
-digitalWrite(vermelhopedestre,HIGH);
-digitalWrite(verdepedestre,HIGH);
-delay (500);
-digitalWrite(vermelhopedestre,LOW);
-digitalWrite(verdepedestre,LOW);
-delay(500);
-digitalWrite(vermelhopedestre,HIGH);
-digitalWrite(verdepedestre,HIGH);
-delay (500);
-digitalWrite(vermelhopedestre,LOW);
-digitalWrite(verdepedestre,LOW);
-delay(500);
-digitalWrite(vermelhopedestre,HIGH);
-digitalWrite(verdepedestre,HIGH);
-delay (500);
-digitalWrite(vermelhopedestre,LOW);
-digitalWrite(verdepedestre,LOW);
-delay(500);
-
-}
-
 void pedidopedestre(){ 
  
 piscarapido(); // anunciando que o pedido foi feito, mas ainda não liberando a passagem dos pedestres
@@ -198,8 +175,8 @@ digitalWrite(vermelhopedestre,HIGH);
 int soma;
 for(soma=0;soma<=100;soma++){
 delay(199);
-if (digitalRead(botao)==1){soma=101;  pedidopedestre(); } 
-if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
+if (digitalRead(botao)==1){soma=101;  pedidopedestre();pedidopedestre();} 
+if (digitalRead(botao2)==1){soma=101; foradeoperacao();foradeoperacao();}
 }
 semafaroA();} 
 }
