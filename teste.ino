@@ -163,7 +163,6 @@ digitalWrite(vermelhopedestre,HIGH);
  digitalWrite(verde2,LOW);
  digitalWrite(amarelo2,HIGH);
 //abaixo um delay de 10s
-int soma;
 for(soma=0;soma<=100;soma++){
 delay(100); 
 if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
