@@ -1,6 +1,6 @@
 
-int sensor=1;
-int sensor=2;
+int senso1r=1;
+int sensor2=2;
 int vermelho=13;
 int amarelo=12;
 int verde=11;
