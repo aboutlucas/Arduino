@@ -52,6 +52,36 @@ if (digitalRead(botao2)==1){soma=598; foradeoperacao();}
 }
 
 }
+void semafaroC(){ //o semafaro C fica vermelho nesse ciclo
+
+
+//  delay(19900); //tempo obrigatorio considerando o tempo do outro semafaro igual a 59 segundos 59/3=19,900 ;OBS: retirei esse delay e coloquei lá no loop, inicio do programa.
+
+digitalWrite(verde2,LOW);
+digitalWrite(amarelo2,HIGH);
+//aqui existira um delay de 10s , mas substitui por uma verificação de 10s 
+//verificacao10s();
+int soma;
+for(soma=0;soma<=100;soma++){
+delay(100); 
+if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
+}
+
+digitalWrite(amarelo2,LOW);
+digitalWrite(vermelho2,HIGH); 
+piscarapido();//sinal dos pedestres piscando
+digitalWrite(verdepedestre,HIGH);
+digitalWrite(vermelho,LOW);
+digitalWrite(verde,HIGH);
+
+//delay de 59,7s abaixo; //obrigatoria verde liberado por 43, tempo que escolhi fazendo o calculo aproximado do tempo total; coloquei aproximadamente 60s de verificação para substituir logo abaixo
+for(soma=0;soma<=597;soma++){
+delay(100); 
+if (digitalRead(botao2)==1){soma=598; foradeoperacao();}
+}
+
+}
+
 void semafaroB(){ //o semaforo B fica vermelho nesse cilo
  digitalWrite(verde,LOW);
  digitalWrite(amarelo,HIGH);
@@ -142,62 +172,6 @@ if (digitalRead(botao2)==1){soma=598; foradeoperacao();}
  delay(2000);
  digitalWrite(vermelho2,LOW); 
  digitalWrite(verde2,HIGH); //Estado inicial do loop
- 
- 
- 
- // b
- piscarapido(); // anunciando que o pedido foi feito, mas ainda não liberando a passagem dos pedestres
-digitalWrite(vermelhopedestre,HIGH);
- digitalWrite(verde2,LOW);
- delay(500);
- digitalWrite(verde2,HIGH);
- delay(500);
- digitalWrite(verde2,LOW);
- delay(500);
- digitalWrite(verde2,HIGH);
- delay(500);
- digitalWrite(verde2,LOW);
- delay(500);
- digitalWrite(verde2,HIGH);
- delay(500);
- digitalWrite(verde2,LOW);
- digitalWrite(amarelo2,HIGH);
-//abaixo um delay de 10s
-for(soma=0;soma<=100;soma++){
-delay(100); 
-if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
-}
-
-digitalWrite(amarelo2,LOW);
-digitalWrite(vermelho2,HIGH);
-delay(2000); //regra de passagem pedido no exercício entre vermelho e verde
-digitalWrite(vermelho,LOW);
-digitalWrite(verde,HIGH);
-digitalWrite(vermelhopedestre,LOW);
-digitalWrite(verdepedestre,HIGH);
-//abaixo um delay "for" de 59,700s;
- for(soma=0;soma<=597;soma++){
-delay(100); 
-if (digitalRead(botao2)==1){soma=598; foradeoperacao();}
-}
- 
- 
- digitalWrite(verde,LOW);
- digitalWrite(amarelo,HIGH);
- piscarapido();
- //espera de 7s abaixo
- digitalWrite(vermelhopedestre,HIGH); //estado inicial do loop ..teoricamente não necessário, mas coloquei aqui
- for(soma=0;soma<=70;soma++){
- delay(100); 
- if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
- }
- digitalWrite(amarelo,LOW);
- digitalWrite(vermelho,HIGH); //estado inical do loop
- delay(2000);
- digitalWrite(vermelho2,LOW); 
- digitalWrite(verde2,HIGH); //Estado inicial do loop
-
- 
 }
 
 void foradeoperacao(){
@@ -232,7 +206,7 @@ delay(199);
 if (digitalRead(botao)==1){soma=101;  pedidopedestre();} 
 if (digitalRead(botao2)==1){soma=101; foradeoperacao();}
 }
-semafaroA();} 
+semafaroA();semafaroC();} 
 }
 
 void loop(){
