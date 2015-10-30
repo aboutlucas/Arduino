@@ -23,8 +23,8 @@ pinMode(vermelhopedestre,OUTPUT);
 pinMode(verdepedestre,OUTPUT);
 pinMode(botao,INPUT); 
 pinMode(botao2,INPUT);  
-pinMode(sensor1,INPUT)
-pinMode(sensor2,INPUT)
+pinMode(sensor1,INPUT);
+pinMode(sensor2,INPUT);
 }
 
 void semafaroA(){ //o semafaro A fica vermelho nesse ciclo
