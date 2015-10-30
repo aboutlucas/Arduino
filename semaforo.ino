@@ -1,10 +1,6 @@
 /*  Semaforos: controla os 2 semaforos de um cruzamento,
     cada um deles fica verde e amarelo enquanto o outro esta vermelho
-  
-    (c)  Augusto Campos 28.11.2014 - BR-Arduino.org
-    Usage of the works is permitted provided that this instrument is retained 
-    with the works, so that any entity that uses the works is notified of 
-    this instrument. DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY. */
+ */
 
 
 // pinos do semaforo 1
